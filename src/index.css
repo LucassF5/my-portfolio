@@ -1,13 +1,11 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@import './css/animation.css';
+
+/* Aplicando o gradiente roxo e azul escuro ao fundo da aplicação */
+body {
+  background: linear-gradient(to bottom, #6a0dad, #1e3a8a); /* roxo para azul escuro */
+  color: white; /* Definir a cor do texto como branco */
 }

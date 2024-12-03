@@ -1,0 +1,84 @@
+/* Animação para rolagem horizontal */
+@keyframes scroll {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Container para animação */
+.overflow-hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* Barra animada */
+.animate-scroll {
+  display: flex;
+  animation: scroll 15s linear infinite;
+}
+
+/* Imagens com espaçamento */
+.animate-scroll img {
+  margin-right: 2rem;
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+.perspective {
+  perspective: 1000px; /* Cria o efeito de perspectiva para os elementos filhos */
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d; /* Permite a manipulação de 3D no espaço */
+}
+
+.backface-hidden {
+  backface-visibility: hidden; /* Esconde a face traseira quando não visível */
+}
+
+.group:hover .transform-style-3d {
+  transform: rotateY(180deg); /* Gira o cartão em 180 graus ao passar o mouse */
+}
+
+.relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease; /* Suaviza o efeito de rotação */
+}
+
+/* Card flip animation */
+.project-card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform 0.5s;
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.card-inner:hover {
+  transform: rotateY(180deg);
+}
+
